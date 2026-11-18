@@ -1,2 +1,3 @@
 Line written on a branch
 A second line
+Branches keep main safe
