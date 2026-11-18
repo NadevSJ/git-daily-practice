@@ -1,1 +1,2 @@
 Line written on a branch
+A second line
