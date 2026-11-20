@@ -1,0 +1,1 @@
+fast-forward when only one side moved, merge commit when both moved
