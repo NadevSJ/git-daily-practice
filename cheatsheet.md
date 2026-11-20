@@ -30,4 +30,14 @@ Day 2 — Your first pull request
 20. echo "Merged through a pull request" >> lab/day002.txt - Appends a note to lab/day002.txt after pulling the merged changes into main
 21. git log --oneline -8                                 - Shows the last 8 commits as compact single lines (hash + message)
 
+Day 3 — Merge commits and the history graph
+
+25. git switch -c lab/day003-merge                          - Creates the branch lab/day003-merge (-c = create) from the commit you are on, and moves you onto it
+26. echo "feature work" > lab/day003-feature.txt            - Writes "feature work" into lab/day003-feature.txt (> creates the file, or replaces what it had)
+27. git add lab/day003-feature.txt                          - Puts the current version of lab/day003-feature.txt into the staging area, the box for your next commit
+28. git commit -m "feat(lab): add feature file for merge practice"  - Saves what is staged as a commit with the message "feat(lab): add feature file for merge practice"
+29. git switch main                                         - Moves you onto the main branch
+30. git merge lab/day003-merge --no-edit                    - Brings the commits of the branch lab/day003-merge into the branch you are on
+31. git log --oneline --graph -6                            - Shows the history: one line per commit (short ID and message), branch lines drawn on the left, showing where branches split and join, only the latest 6 commits
+32. git branch -d lab/day003-merge                          - Deletes the branch name lab/day003-merge on your laptop
 
