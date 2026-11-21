@@ -13,6 +13,6 @@ Date - 20/11/2026
 
 2. After checking with Day 001 in the Hub
 
-   Missed - git push -u origin feature/day001 (if pushing the new branch to remote)
+   Missed - git push -u origin feature/day001
    Wrong - Used git branch instead of git switch -c to create and switch -> right version: git switch -c feature/day001
    Why it matters - Branches isolate experimental work so main stays clean and safe until changes are ready.
