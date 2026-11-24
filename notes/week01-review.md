@@ -17,9 +17,9 @@ The Week - Branches and pull requests
       -> Git fast-forwards when `main` hasn't moved ahead since the branch split off, so it just slides the branch pointer forward along a straight line. It creates a merge commit when both branches have moved forward separately and need a new commit to tie those two histories together.
 
 3. Mistakes and fixes
-   1. Mistake - Committed work straight onto `main` out of habit | Fix - Saved the commit onto a new branch with `git branch feature-fix`, moved `main` back with `git reset --hard HEAD~1`, and switched over using `git switch feature-fix`.
-   2. Mistake - Ran `git push` on a brand-new branch before setting upstream tracking | Fix - Linked local and remote with `git push -u origin <branch-name>` so plain `git push` and `git pull` work smoothly from then on.
-   3. Mistake - Tried to delete a branch while I was still checked out on it | Fix - Moved back with `git switch main` first, then safely removed the merged branch with `git branch -d <branch-name>`.
+   1. Mistake - Committed straight onto `main` out of habit instead of making a branch first | Fix - Saved that commit onto a new branch with `git branch <name>`, stepped `main` back using `git reset --hard HEAD~1`, and jumped over with `git switch <name>`.
+   2. Mistake - Ran `git push` on a new branch before linking it to `origin` | Fix - Followed Git's hint and ran `git push --set-upstream origin <branch>` (or `-u`) so future pushes and pulls know where that branch lives.
+   3. Mistake - Tried to delete a branch while I was still standing on it | Fix - Moved off it first with `git switch main`, then cleaned it up safely with `git branch -d <branch>`.
 
 4. Plan for week 02 - Conflicts and the stash
    1. Handle merge conflicts calmly in VS Code—reading both sides carefully and checking the final file before committing instead of guessing.
