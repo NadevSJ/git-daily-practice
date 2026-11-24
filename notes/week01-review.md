@@ -22,5 +22,5 @@ The Week - Branches and pull requests
    3. Mistake - Tried to delete a branch while I was still standing on it | Fix - Moved off it first with `git switch main`, then cleaned it up safely with `git branch -d <branch>`.
 
 4. Plan for week 02 - Conflicts and the stash
-   1. Handle merge conflicts calmly in VS Code—reading both sides carefully and checking the final file before committing instead of guessing.
-   2. Build real muscle memory with `git stash`, `git stash list`, and `git stash pop` whenever I need to switch branches mid-change.
+   1. Handle merge conflicts calmly in VS Code—reading both sides carefully so I keep the right logic from each branch instead of panicking or wiping out changes by accident.
+   2. Get comfortable using `git stash`, `git stash list`, and `git stash pop` whenever I need to jump to another branch halfway through editing a file.
