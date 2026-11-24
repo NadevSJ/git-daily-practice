@@ -1,7 +1,7 @@
 # My Git Cheatsheet
 
-Day 1 – Day 5 in `git-daily-practice`  
-Started: 18/11/2026 | Updated: 23/11/2026  
+Day 1 – Day 6 in `git-daily-practice`  
+Started: 18/11/2026 | Updated: 22/11/2026  
 Quick notes on the commands I actually used so I don't have to guess later.
 
 ---
@@ -59,3 +59,18 @@ Quick notes on the commands I actually used so I don't have to guess later.
 34. `git pull` - Downloads new commits from GitHub and adds them to your current branch
 35. `git branch -d feat/about-page` - Deletes the branch name `feat/about-page` on your laptop
 36. `git push` - Uploads your local commits on the current branch to GitHub
+
+---
+
+## Day 6 — Week 1 review: Branches and pull requests
+
+37. `cd ~/projects/git-daily-practice && git pull` - Moves into the `git-daily-practice` repository and pulls the latest remote changes before starting
+38. `mkdir -p notes && code notes/week01-review.md` - Creates the `notes` folder if needed (`-p`) and opens `notes/week01-review.md` in VS Code
+39. `git add notes/week01-review.md && git commit -m "docs(review): week 01 summary"` - Stages and commits the Week 1 summary in `notes/week01-review.md`
+40. `git add notes/week01-review.md && git commit -m "docs(review): answer the week 01 self-check questions"` - Stages and commits the memory-recall answers to the self-check questions
+41. `code cheatsheet.md` - Opens `cheatsheet.md` in VS Code so Week 1 commands can be grouped cleanly without duplicates
+42. `git add cheatsheet.md && git commit -m "docs(cheatsheet): tidy week 01 commands"` - Stages and commits the cleaned-up cheatsheet
+43. `git add notes/week01-review.md && git commit -m "docs(review): week 01 mistakes and fixes"` - Stages and commits the logged mistakes and fixes for Week 1
+44. `git add notes/week01-review.md && git commit -m "docs(review): plan week 02"` - Stages and commits the Week 2 goals covering merge conflicts and `git stash`
+45. `echo "- Day 006: week 1 review" >> log.md && git add log.md && git commit -m "chore(log): complete day 006"` - Appends today's completion line to `log.md`, stages it, and commits it
+46. `git push` - Pushes all local commits on the current branch up to GitHub so today's contribution shows on your profile graph
