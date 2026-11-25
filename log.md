@@ -5,3 +5,4 @@
 - Day 004: drill day
 - Day 005: mini-project
 - Day 006: week 1 review
+- Day 007: Create a merge conflict and solve it
