@@ -1,7 +1,7 @@
 # My Git Cheatsheet
 
-Day 1 – Day 6 in `git-daily-practice`  
-Started: 18/11/2026 | Updated: 22/11/2026  
+Day 1 – Day 7 in `git-daily-practice`  
+Started: 18/11/2026 | Updated: 23/11/2026  
 Quick notes on the commands I actually used so I don't have to guess later.
 
 ---
@@ -74,3 +74,19 @@ Quick notes on the commands I actually used so I don't have to guess later.
 44. `git add notes/week01-review.md && git commit -m "docs(review): plan week 02"` - Stages and commits the Week 2 goals covering merge conflicts and `git stash`
 45. `echo "- Day 006: week 1 review" >> log.md && git add log.md && git commit -m "chore(log): complete day 006"` - Appends today's completion line to `log.md`, stages it, and commits it
 46. `git push` - Pushes all local commits on the current branch up to GitHub so today's contribution shows on your profile graph
+
+---
+
+## Day 7 — Create a merge conflict and solve it
+
+47. `echo "color = blue" > lab/day007.txt` - Writes `"color = blue"` into `lab/day007.txt` (`>` creates the file, or replaces what it had)
+48. `git add lab/day007.txt` - Puts the current version of `lab/day007.txt` into the staging area, the box for your next commit
+49. `git commit -m "feat(lab): add settings file for conflict practice"` - Saves what is staged as a commit with the message `"feat(lab): add settings file for conflict practice"`
+50. `git switch -c lab/day007-conflict` - Creates the branch `lab/day007-conflict` (`-c` = create) from the commit you are on, and moves you onto it
+51. `git commit -am "feat(lab): change color to green on the branch"` - Stages every changed tracked file and commits it in one step (`-am`) with the message `"feat(lab): change color to green on the branch"`
+52. `git switch main` - Moves you onto the `main` branch
+53. `git merge lab/day007-conflict` - Brings the commits of the branch `lab/day007-conflict` into the branch you are on (pausing with a conflict when both sides edit the same line)
+54. `git status` - Tells you which branch you are on and lists files in three groups: staged (green, will go into the next commit), changed but not staged (red) and untracked (new files Git does not know yet)
+55. `cat lab/day007.txt` - Prints the whole content of `lab/day007.txt` in the terminal
+56. `git log --oneline --graph -5` - Shows the history: one line per commit (short ID and message), branch lines drawn on the left, showing where branches split and join, only the latest 5 commits
+57. `git branch -d lab/day007-conflict` - Deletes the branch name `lab/day007-conflict` on your laptop
