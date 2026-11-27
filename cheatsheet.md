@@ -1,7 +1,7 @@
 # My Git Cheatsheet
 
-Day 1 – Day 7 in `git-daily-practice`  
-Started: 18/11/2026 | Updated: 23/11/2026  
+Day 1 – Day 8 in `git-daily-practice`  
+Started: 18/11/2026 | Updated: 24/11/2026  
 Quick notes on the commands I actually used so I don't have to guess later.
 
 ---
@@ -90,3 +90,20 @@ Quick notes on the commands I actually used so I don't have to guess later.
 55. `cat lab/day007.txt` - Prints the whole content of `lab/day007.txt` in the terminal
 56. `git log --oneline --graph -5` - Shows the history: one line per commit (short ID and message), branch lines drawn on the left, showing where branches split and join, only the latest 5 commits
 57. `git branch -d lab/day007-conflict` - Deletes the branch name `lab/day007-conflict` on your laptop
+
+---
+
+## Day 8 — Cancel a merge, or take one side
+
+58. `echo "size = small" > lab/day008.txt` - Writes `"size = small"` into `lab/day008.txt` (`>` creates the file if missing or overwrites existing content)
+59. `git add lab/day008.txt` - Puts the current version of `lab/day008.txt` into the staging area, the box for your next commit
+60. `git commit -m "feat(lab): add size setting"` - Saves what is staged as a commit with the message `"feat(lab): add size setting"`
+61. `git switch -c lab/day008-sides` - Creates the branch `lab/day008-sides` (`-c` = create) from the commit you are on, and moves you onto it
+62. `git commit -am "feat(lab): set size to large on the branch"` - Stages every changed tracked file and commits it in one step (`-am`) with the message `"feat(lab): set size to large on the branch"`
+63. `git switch main` - Moves you onto the `main` branch
+64. `git merge lab/day008-sides` - Brings the commits of the branch `lab/day008-sides` into the branch you are on (stopping on conflict when both branches modified `lab/day008.txt`)
+65. `git merge --abort` - Stops a merge that hit a conflict and puts everything back the way it was before the merge
+66. `git status` - Tells you which branch you are on and lists files in three groups: staged (green, will go into the next commit), changed but not staged (red) and untracked (new files Git does not know yet)
+67. `git restore --theirs lab/day008.txt` - Fills `lab/day008.txt` with the version from the branch you are bringing in (`--theirs`), dropping your side of the conflict
+68. `cat lab/day008.txt` - Prints the whole content of `lab/day008.txt` in the terminal
+69. `git branch -d lab/day008-sides` - Deletes the branch name `lab/day008-sides` on your laptop
