@@ -6,3 +6,4 @@
 - Day 005: mini-project
 - Day 006: week 1 review
 - Day 007: Create a merge conflict and solve it
+- Day 008: Cancel a merge, or take one side
