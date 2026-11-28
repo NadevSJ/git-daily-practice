@@ -1,7 +1,7 @@
 # My Git Cheatsheet
 
-Day 1 – Day 8 in `git-daily-practice`  
-Started: 18/11/2026 | Updated: 24/11/2026  
+Day 1 – Day 9 in `git-daily-practice`  
+Started: 18/11/2026 | Updated: 25/11/2026  
 Quick notes on the commands I actually used so I don't have to guess later.
 
 ---
@@ -107,3 +107,25 @@ Quick notes on the commands I actually used so I don't have to guess later.
 67. `git restore --theirs lab/day008.txt` - Fills `lab/day008.txt` with the version from the branch you are bringing in (`--theirs`), dropping your side of the conflict
 68. `cat lab/day008.txt` - Prints the whole content of `lab/day008.txt` in the terminal
 69. `git branch -d lab/day008-sides` - Deletes the branch name `lab/day008-sides` on your laptop
+
+---
+
+## Day 9 — Stash: put unfinished work in a drawer
+
+70. `cd ~/projects/git-daily-practice && git pull` - Moves into the `git-daily-practice` repository and pulls the latest remote changes before starting
+71. `echo "draft line 1" > lab/day009.txt && git add lab/day009.txt && git commit -m "feat(lab): start a draft file"` - Creates `lab/day009.txt` with `"draft line 1"`, stages it, and saves the initial draft commit
+72. `echo "half-finished idea" >> lab/day009.txt` - Appends (`>>`) `"half-finished idea"` to `lab/day009.txt` without committing it
+73. `git status` - Shows the current branch and lists modified tracked files not yet staged
+74. `git stash` - Saves uncommitted changes on tracked files onto the stash stack and cleans the working directory back to `HEAD`
+75. `git status` - Confirms the working tree is clean after stashing
+76. `cat lab/day009.txt` - Prints `lab/day009.txt` showing only `"draft line 1"` while the half-finished line is stashed away
+77. `echo "urgent fix" > lab/day009-urgent.txt && git add lab/day009-urgent.txt && git commit -m "fix(lab): add the urgent fix first"` - Creates, stages, and commits the urgent fix file cleanly on its own
+78. `git stash list` - Lists saved stashes on the stack, with the newest entry at `stash@{0}`
+79. `git stash pop` - Applies the newest stash (`stash@{0}`) back to the working directory and drops it from the stash stack
+80. `git commit -am "feat(lab): finish the idea from the stash"` - Stages tracked file modifications and commits the completed draft change in one step (`-am`)
+81. `mkdir -p notes && code notes/day009.md` - Creates the `notes` directory if missing (`-p`) and opens `notes/day009.md` in VS Code
+82. `git add notes/day009.md && git commit -m "docs(notes): day 009 - Stash"` - Stages and commits today's reflection notes
+83. `code cheatsheet.md` - Opens `cheatsheet.md` in VS Code to record Day 9 commands
+84. `git add cheatsheet.md && git commit -m "docs(cheatsheet): add day 009 commands"` - Stages and commits the updated cheatsheet
+85. `echo "- Day 009: Stash" >> log.md && git add log.md && git commit -m "chore(log): complete day 009"` - Appends Day 9 to `log.md`, stages it, and commits the log entry
+86. `git push` - Pushes all local commits on the branch to GitHub so the contribution graph updates
